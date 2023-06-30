@@ -32,6 +32,10 @@ class FigureProcessor():
             return([])
         elif (self.active and isinstance(e,pf.Figure)):
             logging.debug(e)
+            #if e.identifier:
+            #    self.l.append(pf.RawBlock(
+            #        '\033[A\\hypertarget{'+e.identifier+'}{%',
+            #        format='latex'))
             e.caption.content[0].content.insert(0,
                                                 pf.RawInline(
                                                     '\033[A\\caption{',
@@ -40,8 +44,14 @@ class FigureProcessor():
                 pf.RawInline('}',format='latex'))
             for p in e.caption.content:
                 self.l.append(p)
-            self.l.append(pf.RawBlock(
-                '\033[A\\label{'+e.identifier+'}',format='latex'))
+            if e.identifier:
+                self.l.append(pf.RawBlock(
+                    '\033[A\\label{'+e.identifier+'}',format='latex'))
+            #if e.identifier:
+            #    self.l.append(pf.RawBlock('\033[A\\includegraphics{'+
+            #                              e.content[0].content[0].url+
+            #                              '}}',format='latex'))
+            #else:
             self.l.append(pf.RawBlock('\033[A\\includegraphics{'+
                                       e.content[0].content[0].url+
                                       '}',format='latex'))

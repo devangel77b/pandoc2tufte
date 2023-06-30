@@ -23,7 +23,6 @@ Already built-in to pandoc:
 * tables wtf simple works but maybe start doing standalone... 
 
 Todo:
-* run tabletest.md and check
 * check image widths. what to do with this?
 * might have to add case in figure.py for html/xml/epub output
 """
@@ -35,6 +34,7 @@ import footer
 import epigraph
 import code
 import figure
+import table
 import logging
 #logging.basicConfig(level=logging.DEBUG)
 
@@ -45,6 +45,7 @@ def main(doc=None):
                            epigraph.to_latex,
                            code.to_latex,
                            figure.to_latex,
+                           table.to_latex,
                            ],doc)
 
 if __name__ == "__main__":

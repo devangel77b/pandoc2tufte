@@ -3,6 +3,8 @@ title: table test
 author: D Evangelista
 date: today
 ---
+# Simple `table`
+<figure class="table">
 
   Right     Left     Center     Default
 -------     ------ ----------   -------
@@ -10,10 +12,23 @@ date: today
     123     123       123          123
       1     1          1             1
 	  
-Table: Simple table
+: Simple table caption here {#tbl:table1}
 
-Does margintable work?[^mt]
+</figure>
 
-[^mt]: {-} margin table here
-  Table: A margin table
+# Fullwidth `table*`
+<figure class="table*">
+![Table caption here](converted-table.pdf){#tbl:table2}
+</figure>
 
+# `margintable`
+<figure class="margintable">
+
+Table: Hmmm {#tbl:table3}
+
+ A   B   C 
+--- --- ---
+ D   E   F
+ G   H   I
+ 
+</figure>
