@@ -1,0 +1,25 @@
+\documentclass{article}
+
+\usepackage{booktabs,longtable,multicol,tabularx}
+
+\begin{document}
+\begin{longtable}[]{@{}rlcl@{}}
+\caption{Simple table}\tabularnewline
+\toprule\noalign{}
+Right & Left & Center & Default \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+Right & Left & Center & Default \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+12 & 12 & 12 & 12 \\
+123 & 123 & 123 & 123 \\
+1 & 1 & 1 & 1 \\
+\end{longtable}
+
+Does margintable work?\footnote{\{-\} margin table here Table: A margin
+  table}
+\end{document}
